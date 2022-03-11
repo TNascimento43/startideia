@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="tnascimento" id="20220311142600-01">
+        <createTable tableName="tb_tool" remarks="Table of Tool">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="tool_pk"/>
+            </column>
+            <column name="title" type="VARCHAR(255)" remarks="Title of tool"/>
+            <column name="link" type="VARCHAR(255)" remarks="Link of tool"/>
+            <column name="description" type="VARCHAR(255)" remarks="Description of tool"/>
+        </createTable>
+        <createSequence sequenceName="seq_tool" startValue="1"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="tnascimento" id="20220311142600-01">
+        <createTable tableName="tb_tag" remarks="Table of Tag">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="tag_pk"/>
+            </column>
+            <column name="description" type="varchar(255)" remarks="Title of Tag"/>
+            <column name="tool_id" type="bigint" remarks="Identify of tool"/>
+        </createTable>
+        <createSequence sequenceName="seq_tag" startValue="1"/>
+        <addForeignKeyConstraint baseTableName="tb_tag"
+                                 baseColumnNames="tool_id"
+                                 constraintName="tag_tool_fk"
+                                 referencedTableName="tb_tool"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

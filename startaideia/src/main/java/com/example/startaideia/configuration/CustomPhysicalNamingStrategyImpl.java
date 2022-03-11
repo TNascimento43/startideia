@@ -9,7 +9,7 @@ import java.util.Locale;
 public class CustomPhysicalNamingStrategyImpl implements PhysicalNamingStrategy {
 
     private static boolean isUnderscoreRequired(char before, char current, char after) {
-        return Character.isLowerCase(before) && Character.isUpperCase(current) && Character.isLowerCase(after);
+        return Character.isUpperCase(before) && Character.isUpperCase(current) && Character.isUpperCase(after);
     }
 
     public Identifier toPhysicalCatalogName(Identifier name, JdbcEnvironment jdbcEnvironment) {
