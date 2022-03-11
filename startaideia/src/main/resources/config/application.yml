@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: startideia
+  liquibase:
+    enabled: true
+    change-log: classpath:config/liquibase/master.xml
+
+swagger:
+  default-include-pattern: /api/.*
+  title: apistartideia API
+  description: apistartideia API documentation
+  version: 0.0.1
+  terms-of-service-url:
+  contact-name:
+  contact-url:
+  contact-email:
+  license:
+  license-url:

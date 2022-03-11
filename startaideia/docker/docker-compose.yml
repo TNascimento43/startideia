@@ -1,0 +1,7 @@
+version: '2'
+services:
+  startideia-postgres:
+    extends:
+      file: postgres/postgresql.yml
+      service: startideia-postgresql
+    container_name: startideia-postgresql

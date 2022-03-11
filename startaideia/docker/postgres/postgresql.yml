@@ -1,0 +1,11 @@
+version: '2'
+services:
+  startideia-postgresql:
+    image: postgres:11.5
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_USER=apistartideia
+      - POSTGRES_PASSWORD=apistartideia
+    ports:
+      - 5432:5432
